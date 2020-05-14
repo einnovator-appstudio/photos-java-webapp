@@ -5,13 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.jsimao71.photos.model.Contact;
 import com.jsimao71.photos.repository.ContactRepository;
 import com.jsimao71.photos.xmodel.ContactFilter;
-import org.einnovator.jpa.manager.ManagerBaseImpl3;
+import org.einnovator.jpa.manager.ManagerBaseImpl;
 import org.einnovator.util.PageOptions;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 @Service()
-public class ContactManagerImpl extends ManagerBaseImpl3<Contact> implements ContactManager {
+public class ContactManagerImpl extends ManagerBaseImpl<Contact, Long> implements ContactManager {
 
     public final String CONTACT_RESOURCE_JSON = "data/Contact.json";
 
