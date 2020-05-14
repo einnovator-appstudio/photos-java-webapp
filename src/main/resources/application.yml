@@ -1,0 +1,27 @@
+---
+app:
+  id: "photos"
+  name: "Photos"
+  description: ""
+  img: "http://localhost:2020/_/~jsimao71@gmail.com/.upload/file-photo-icon-teal100-1578407611757.png"
+  thumbnail: null
+server:
+  port: 8080
+spring:
+  datasource:
+    url: "jdbc:mysql://localhost/photos?verifyServerCertificate=false&useSSL=true&reconnect=true"
+    username: "root"
+    password: "****"
+    driver-class-name: "com.mysql.jdbc.Driver"
+  jpa:
+    generate-ddl: true
+    show-sql: false
+    database-platform: "org.hibernate.dialect.MySQLDialect"
+    hibernate:
+      ddl-auto: "update"
+  http:
+    multipart:
+      max-file-size: "1000MB"
+      max-request-size: "1000MB"
+  jackson:
+    default-property-inclusion: "NON_NULL"
