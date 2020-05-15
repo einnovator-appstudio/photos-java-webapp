@@ -22,29 +22,9 @@
             <version>${einnovator.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.einnovator</groupId>
-            <artifactId>einnovator-sso-starter</artifactId>
-            <version>${einnovator.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.einnovator</groupId>
-            <artifactId>einnovator-notifications-starter</artifactId>
-            <version>${einnovator.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.einnovator</groupId>
-            <artifactId>einnovator-documents-starter</artifactId>
-            <version>${einnovator.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.einnovator</groupId>
-            <artifactId>einnovator-social-starter</artifactId>
-            <version>${einnovator.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.einnovator</groupId>
-            <artifactId>einnovator-payments-starter</artifactId>
-            <version>${einnovator.version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -60,6 +40,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>

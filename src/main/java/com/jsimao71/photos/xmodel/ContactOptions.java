@@ -6,6 +6,9 @@ import org.einnovator.util.model.ToStringCreator;
 
 public class ContactOptions extends EntityOptions<Contact> {
 
+    /**
+     * Create instance of {@code ContactOptions}.
+     */
     public ContactOptions() {
         super();
     }

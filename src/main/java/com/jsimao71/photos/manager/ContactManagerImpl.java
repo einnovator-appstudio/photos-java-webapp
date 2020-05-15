@@ -1,12 +1,12 @@
 package com.jsimao71.photos.manager;
 
 import org.springframework.stereotype.Service;
-import org.springframework.beans.factory.annotation.Autowired;
 import com.jsimao71.photos.model.Contact;
 import com.jsimao71.photos.repository.ContactRepository;
 import com.jsimao71.photos.xmodel.ContactFilter;
 import org.einnovator.jpa.manager.ManagerBaseImpl;
 import org.einnovator.util.PageOptions;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -19,7 +19,7 @@ public class ContactManagerImpl extends ManagerBaseImpl<Contact, Long> implement
 
     public final String CONTACT_RESOURCE_XLS = "data/Contact.xls";
 
-    @Autowired()
+    @Autowired
     private ContactRepository repository;
 
     private boolean init;

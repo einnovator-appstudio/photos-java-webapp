@@ -2,61 +2,102 @@ package com.jsimao71.photos.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import java.util.ArrayList;
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.OrderBy;
+import javax.validation.constraints.NotNull;
+import org.einnovator.jpa.model.EntityBase;
 import org.einnovator.util.model.ToStringCreator;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
-public class Contact extends org.einnovator.jpa.model.EntityBase<Long> {
+/**
+ * A {@code Contact}.
+ *
+ * @author Jorge Simao
+ */
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@Entity
+public class Contact extends EntityBase<Long> {
 
-    @Column()
+    @JsonColumn("Name")
+    @NotNull 
+    @Column(unique = true)
     private String name;
 
-    @Column()
+    @JsonColumn("Email")
+    @NotNull 
+    @Column(unique = true)
     private String email;
 
-    @Column()
+    @JsonColumn("Comment")
+    @Column(unique = true)
     private String comment;
 
+    /**
+     * Create instance of {@code Contact}.
+     */
     public Contact() {
         super();
     }
 
+    /**
+     * Create instance of {@code Contact}.
+     *
+     * @param obj a prototype
+     */
     public Contact(Object obj) {
         super(obj);
     }
 
+    /**
+     * Set value of property {@code name}.
+     *
+     * @param name the value of name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Get value of property {@code name}.
+     *
+     * @return name the {@code name}
+     */
     public String getName() {
         return this.name;
     }
 
+    /**
+     * Set value of property {@code email}.
+     *
+     * @param email the value of email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * Get value of property {@code email}.
+     *
+     * @return email the {@code email}
+     */
     public String getEmail() {
         return this.email;
     }
 
+    /**
+     * Set value of property {@code comment}.
+     *
+     * @param comment the value of comment
+     */
     public void setComment(String comment) {
         this.comment = comment;
     }
 
+    /**
+     * Get value of property {@code comment}.
+     *
+     * @return comment the {@code comment}
+     */
     public String getComment() {
         return this.comment;
     }

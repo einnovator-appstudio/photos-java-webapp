@@ -82,8 +82,4 @@ public abstract class ControllerBase extends org.einnovator.common.web.Controlle
         // permissive
         return true;
     }
-
-    protected boolean isMember(Principal principal, String groupId) {
-        return groupManager.isMember(groupId, principal.getName());
-    }
 }

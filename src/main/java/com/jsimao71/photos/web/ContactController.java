@@ -6,11 +6,18 @@ import java.security.Principal;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.validation.BindingResult;
+import com.jsimao71.photos.manager.ContactManager;
+import com.jsimao71.photos.model.Contact;
+import com.jsimao71.photos.repository.ContactRepository;
+import com.jsimao71.photos.xmodel.ContactFilter;
+import com.jsimao71.photos.xmodel.ContactOptions;
 import java.util.Collection;
 import java.util.Optional;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import org.einnovator.jpa.manager.ManagerBase;
+import org.einnovator.jpa.manager.ManagerBaseImpl;
 import org.einnovator.util.PageOptions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -27,6 +34,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller()
 @RequestMapping(value = { "/contact" })
 public class ContactController extends ControllerBase {
+
+    @Autowired()
+    private ContactManager contactManager;
 
     @GetMapping(value = { "/{id}" })
     public Object show(@PathVariable(value = "id") String id, ContactOptions options, Model model, Principal principal, HttpServletRequest request, RedirectAttributes redirectAttributes) {
